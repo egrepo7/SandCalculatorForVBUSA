@@ -3,9 +3,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Sand Calculator</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript" language="JavaScript">// <![CDATA[
+            
+        function calcTons(form) {
+            
+            tonAmt = (form.elements[0].value * form.elements[1].value * (form.elements[2].value / 12.0) / 27.0) * form.elements[3].value / 2000.0;
+
+            form.elements[4].value = formatvalue(tonAmt);
+            
+        }
+
+        // ]]></script>
+
 </head>
 <body>
     
+    <div class="sandformCenter">
+        <h3 class="sandTableHeader">Sand Volume Calculator</h3>
+        <p>Please enter your court dimensions for your estimated sand tonnage.</p>
+        <form id="newSandForm" class="pure-form pure-form-aligned sand-pure-form">
+            <div class="pure-control-group">
+                <label for="Court Width">Court Width</label>
+                <input type="text" placeholder="Width (feet)" name="cWidth">
+            </div>
+            <div class="pure-control-group">
+                <label for="Court Length">Court Length</label>
+                <input type="text" placeholder="Length (feet)" name="cLength">
+            </div>
+            <div class="pure-control-group">
+                <label for="Court Depth">Court Depth</label>
+                <input type="text" placeholder="Depth (inches)" name="cDepth">
+            </div>
+            <div class="pure-control-group">
+                <label for="Court Density (lbs/cubic yd)">Court Density (lbs/cubic yd)</label>
+                <input type="text" value="2700" readonly name="cDensity">
+            </div>
+            <div class="pure-control-group">
+                <label for="Total Tons Required:">Total Tons Required:</label>
+                <input type="text" name="cTotal">
+            </div>
+
+            
+            <div class="pure-controls">
+                <input onclick="calcTons(this.form)" type="button" class="pure-button pure-button-primary" value="Calculate">
+
+                <input onclick="clearform(this.form,0,4)" type="button" class="pure-button pure-button-primary" value="Clear">
+            </div>
+
+        </form>
+        </div>
+
 </body>
 </html>

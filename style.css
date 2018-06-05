@@ -1,0 +1,48 @@
+.sand-pure-form {
+    margin: 30px auto;
+  }
+  
+  .sandTableHeader {
+    padding-top: 20px;
+  }
+  
+  .sandformCenter {
+    margin-top: 20px;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 70%;
+    background: #f7f4ec;
+    border-radius: 5px;
+  }
+  
+  .pure-control-group input {
+    width: 60%;
+    text-align: center;
+  }
+  
+  .pure-controls input {
+    width: 43%;
+    text-align: center;
+  }
+  
+  .sandformCenter h3,
+  .sandformCenter p {
+    text-align: center;
+  }
+
+  @media (max-width: 479px) {
+    .sandformCenter {
+        max-width:95%;
+        margin: 0 auto;
+      }
+    
+      .sandTableHeader {
+        margin: 25px auto 0; 
+        padding-top: 0px;
+      }
+    
+      .pure-control-group input {
+        width: 100%;
+        text-align: left;
+      }
+  }
